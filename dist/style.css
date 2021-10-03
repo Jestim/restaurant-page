@@ -9,10 +9,14 @@
     src: url(./font/Lobster-Regular.ttf);
 }
 
+html {
+    scrollbar-width: none;
+}
+
 body {
     font-family: lobster, Arial, Helvetica, sans-serif;
     color: rgb(255, 255, 255);
-    background-image: url(./img/restaurant.jpg);
+    background: url(./img/restaurant.jpg) no-repeat center center fixed;
     background-color: #ccc;
     background-size: cover;
 }
@@ -59,7 +63,7 @@ body {
 }
 
 .active {
-    text-decoration: underline;
+    border-bottom: 1px solid white;
 }
 
 
@@ -84,6 +88,7 @@ body {
     font-size: 1.5rem;
     background-color: rgba(0, 0, 0, 0.4);
     text-align: center;
+    word-wrap: break-word;
 }
 
 .menu-item {
@@ -95,7 +100,7 @@ body {
 
 .menu-item>p {
     margin-top: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 .contact>h2 {

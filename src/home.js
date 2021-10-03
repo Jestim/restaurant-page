@@ -7,10 +7,6 @@ function initHome() {
     createFooter();
 }
 
-function loadHome() {
-    createMain();
-}
-
 function createHeader() {
     const headerElement = document.createElement('header');
     headerElement.classList.add('header');
@@ -47,6 +43,10 @@ function createNavButton(destination) {
     BtnElement.id = destination.toLowerCase();
     BtnElement.textContent = destination;
 
+    if (destination == 'Home') {
+        BtnElement.classList.add('active');
+    }
+
     return BtnElement;
 }
 
@@ -54,19 +54,28 @@ function createMain() {
     const mainElement = document.createElement('main');
     mainElement.classList.add('main');
 
-    const firstParaElement = document.createElement('p');
-    firstParaElement.classList.add('info');
-    firstParaElement.textContent = 'This is the best restaurant in the world! If you come here to eat you will remember it for the rest of your life!';
-    mainElement.appendChild(firstParaElement);
-
-    const secondParaElement = document.createElement('p');
-    secondParaElement.classList.add('info');
-    secondParaElement.textContent = 'But be aware! If you order the wrong dish you might be very disapointed.';
-    mainElement.appendChild(secondParaElement);
+    mainElement.appendChild(createMainPara1());
+    mainElement.appendChild(createMainPara2());
 
     contentElement.appendChild(mainElement);
 
     return mainElement;
+}
+
+function createMainPara1() {
+    const firstParaElement = document.createElement('p');
+    firstParaElement.classList.add('info');
+    firstParaElement.textContent = 'This is the best restaurant in the world! If you come here to eat you will remember it for the rest of your life!';
+
+    return firstParaElement;
+}
+
+function createMainPara2() {
+    const secondParaElement = document.createElement('p');
+    secondParaElement.classList.add('info');
+    secondParaElement.textContent = 'But be aware! If you order the wrong dish you might be very disapointed.';
+
+    return secondParaElement;
 }
 
 function createFooter() {
@@ -79,6 +88,13 @@ function createFooter() {
     footerElement.appendChild(paraElement);
 
     contentElement.appendChild(footerElement);
+}
+
+function loadHome() {
+    const mainElement = document.querySelector('.main');
+
+    mainElement.appendChild(createMainPara1());
+    mainElement.appendChild(createMainPara2());
 }
 
 export { initHome, loadHome };

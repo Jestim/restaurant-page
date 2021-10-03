@@ -1,6 +1,3 @@
-// Dom elements
-
-
 // Menu info
 
 const dish1 = {
@@ -35,6 +32,8 @@ const dish5 = {
 
 const dishes = [dish1, dish2, dish3, dish4, dish5];
 
+
+
 function loadMenu() {
     const mainElement = document.querySelector('.main');
     for (let i = 0; i < dishes.length; i++) {
@@ -46,22 +45,17 @@ function createMenuItem(header, para1, para2) {
     const menuItemElement = document.createElement('div');
     menuItemElement.classList.add('menu-item');
 
-    const menuItemHeaderElement = document.createElement('h2');
-    menuItemHeaderElement.textContent = header;
-    menuItemElement.appendChild(menuItemHeaderElement);
-
-    const menuItemPara1Element = document.createElement('p');
-    menuItemPara1Element.textContent = para1;
-    menuItemElement.appendChild(menuItemPara1Element);
-
-    const menuItemPara2Element = document.createElement('p');
-    menuItemPara2Element.textContent = para2;
-    menuItemElement.appendChild(menuItemPara2Element);
+    menuItemElement.appendChild(createMenuItemContent('h2', header));
+    menuItemElement.appendChild(createMenuItemContent('p', para1));
+    menuItemElement.appendChild(createMenuItemContent('p', para2));
 
     return menuItemElement;
 }
 
-
-
+function createMenuItemContent(elementType, content) {
+    const menuItemContentElement = document.createElement(elementType);
+    menuItemContentElement.textContent = content;
+    return menuItemContentElement;
+}
 
 export default loadMenu;

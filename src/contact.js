@@ -5,18 +5,16 @@ function loadContact() {
     contactElement.classList.add('contact');
     mainElement.appendChild(contactElement);
 
-    const contactHeaderElement = document.createElement('h2');
-    contactHeaderElement.textContent = 'Contact us!';
-    contactElement.appendChild(contactHeaderElement);
+    contactElement.appendChild(createContactContentElement('h2', 'Contact us!'));
+    contactElement.appendChild(createContactContentElement('p', 'Call us here: <em>+1 123 456 789</em>'));
+    contactElement.appendChild(createContactContentElement('p', 'Or email us: <em>Info@TheBestRestaurant.com</em>'));
+}
 
-    const contactPhoneElement = document.createElement('p');
-    contactPhoneElement.innerHTML = 'Call us here: <em>+1 123 456 789</em>';
-    contactElement.appendChild(contactPhoneElement);
+function createContactContentElement(elementType, content) {
+    const contentElement = document.createElement(elementType);
+    contentElement.innerHTML = content;
 
-
-    const contactEmailElement = document.createElement('p');
-    contactEmailElement.innerHTML = 'Or email us: <em>Info@TheBestRestaurant.com</em>';
-    contactElement.appendChild(contactEmailElement);
+    return contentElement;
 }
 
 export default loadContact;
