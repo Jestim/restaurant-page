@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: lobster;
+    src: url(./font/Lobster-Regular.ttf);
+}
+
+body {
+    font-family: lobster, Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    background-image: url(./img/restaurant.jpg);
+    background-color: #ccc;
+    background-size: cover;
+}
+
+.content {
+    height: 100vh;
+    width: 100%;
+}
+
+
+/* header */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.header-text {
+    margin-top: 2rem;
+    font-size: 5rem;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-link {
+    background: none;
+    border: none;
+    font-family: inherit;
+    color: inherit;
+    font-size: 2.5rem;
+    margin: 1rem 3rem 1rem 3rem;
+}
+
+.nav-link:hover {
+    transition: transform 0.3s;
+    color: rgb(113, 143, 153);
+    transform: scale(1.1);
+    transform: translate(0, -5px);
+}
+
+.active {
+    text-decoration: underline;
+}
+
+
+/* main */
+
+.main {
+    height: auto;
+    width: 60vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main p {
+    margin-top: 2rem;
+    padding: 2.5rem;
+    border: solid;
+    width: 25vw;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+
+/* footer */
+
+.footer {
+    width: 100%;
+    padding: 1rem;
+    text-align: end;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 1.5rem;
+    position: fixed;
+    bottom: 0;
+}
+
+a {
+    color: inherit;
+}
